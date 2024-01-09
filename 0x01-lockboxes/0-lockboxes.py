@@ -1,16 +1,17 @@
 #!/usr/bin/python3
-""" The base class. """
+""" The code."""
+
 
 def canUnlockAll(boxes):
     """
-    Determines if all boxes can be unlocked.
+    Check if all boxes can be unlocked.
 
     Parameters:
     boxes (list of lists): A list of lists where
     each sublist represents the keys in a box.
 
     Returns:
-    bool: True if all boxes can be unlocked, False otherwise.
+    True if all unlocked, False otherwise.
     """
     # Initialize a set to keep track of the boxes that have been unlocked
     unlocked = {0}
