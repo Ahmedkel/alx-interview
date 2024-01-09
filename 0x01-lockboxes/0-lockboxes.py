@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" The code."""
+""" The main code."""
 
 
 def canUnlockAll(boxes):
@@ -13,23 +13,21 @@ def canUnlockAll(boxes):
     Returns:
     True if all unlocked, False otherwise.
     """
-    # Initialize a set to keep track of the boxes that have been unlocked
-    unlocked = {0}
+    box_set = set(boxes[0])
 
-    # While there are still unlocked boxes
-    while len(unlocked) != len(boxes):
-        # Copy the current state of unlocked boxes
-        old_unlocked = unlocked.copy()
+    i = 0
+    while i < len(boxes[0]):
+        n = boxes[0][i]
+        if n < len(boxes):
+            box_set.update(boxes[n])
+        i += 1
 
-        # Try to unlock new boxes
-        for box in range(len(boxes)):
-            if box in unlocked:
-                for key in boxes[box]:
-                    unlocked.add(key)
-
-        # If no new boxes were unlocked, return False
-        if old_unlocked == unlocked:
+    j = 1
+    while j < len(boxes):
+        if j in box_set:
+            box_set.update(boxes[j])
+        else:
             return False
+        j += 1
 
-    # If all boxes are unlocked, return True
     return True
