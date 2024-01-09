@@ -1,4 +1,6 @@
 #!/usr/bin/python3
+""" The base class. """
+
 def canUnlockAll(boxes):
     """
     Determines if all boxes can be unlocked.
