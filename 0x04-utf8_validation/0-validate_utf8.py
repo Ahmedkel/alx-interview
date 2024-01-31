@@ -3,6 +3,7 @@
 
 
 def validUTF8(data):
+    """Check if data is valid UTF-8"""
     n = len(data)
     i = 0
     while i < n:
