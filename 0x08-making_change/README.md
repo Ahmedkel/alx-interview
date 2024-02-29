@@ -1,15 +1,5 @@
 # 0x08. Making Change
 
-AlgorithmPython
-
--   By: Carrie Ybay, Software Engineer at Holberton School
--   Weight: 1
--   Project will start Feb 26, 2024 4:00 AM, must end by Mar 1, 2024 4:00 AM
--   Checker was released at Feb 27, 2024 4:00 AM
--   An auto review will be launched at the deadline
-
-For the “0. Change comes from within” project, you will tackle a classic problem from the domain of dynamic programming and greedy algorithms: the coin change problem. The objective is to find the minimum number of coins required to make up a given total amount, given a list of coin denominations. This project challenges you to apply your understanding of algorithms to devise a solution that is not only correct but also efficient. Below are the key concepts and resources necessary to complete this project successfully.
-
 ### Concepts Needed:
 
 1.  **Greedy Algorithms**:
@@ -67,8 +57,6 @@ By thoroughly understanding these concepts and utilizing the provided resources,
 ## Tasks
 
 ### 0\. Change comes from within
-
-mandatory
 
 Given a pile of coins of different values, determine the fewest number of coins needed to meet a given amount `total`.
 
