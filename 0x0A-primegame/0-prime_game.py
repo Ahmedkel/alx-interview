@@ -7,9 +7,8 @@ def isWinner(x, nums):
     maria_wins = 0
     ben_wins = 0
 
-
     def is_prime(n):
-        """ Check if a number is prime. """
+        """ Determine if a number is prime. """
         if n < 2:
             return False
         for i in range(2, int(n**0.5) + 1):
@@ -17,24 +16,28 @@ def isWinner(x, nums):
                 return False
         return True
 
+    def remove_multiples(num, nums):
+        """ Remove multiples of a number from a list. """
+        new_nums = []
+        for n in nums:
+            if n % num != 0:
+                new_nums.append(n)
+        return new_nums
 
     for _ in range(x):
-
-        primes = [num for num in nums if is_prime(num)]
-        if not primes:
-            return None
-
-
-        chosen_prime = max(primes)
-
-        nums = [num for num in nums if num != chosen_prime and num % chosen_prime != 0]
-
-
-        if _ % 2 == 0:
-            maria_wins += 1
-        else:
-            ben_wins += 1
-
+        maria_turn = True
+        while nums:
+            primes = [n for n in nums if is_prime(n)]
+            if not primes:
+                if maria_turn:
+                    ben_wins += 1
+                else:
+                    maria_wins += 1
+                break
+            chosen_prime = max(
+                primes, key=lambda n: len(remove_multiples(n, nums)))
+            nums = remove_multiples(chosen_prime, nums)
+            maria_turn = not maria_turn
 
     if maria_wins > ben_wins:
         return "Maria"
